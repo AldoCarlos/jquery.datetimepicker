@@ -1,0 +1,9 @@
+DateTime Picker plugin that alters JQuery's datepicker to add hour selection
+@version: v1.0.0
+@author: Aldo Junior Carlos
+
+Based on
+http://jonthornton.github.com/jquery-timepicker/
+http://jqueryui.com/datepicker/
+
+
