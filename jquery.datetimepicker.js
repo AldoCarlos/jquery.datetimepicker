@@ -1,7 +1,7 @@
 ﻿/**
  * DateTime Picker plugin that alters JQuery's datepicker to add hour selection
  * @version: v1.0.0
- * @author: Aldo Junior Carlos
+ * @author: Aldo Junior Carlos(https://github.com/AldoCarlos/jquery.datetimepicker/)
  *
  * Based on
  * http://jonthornton.github.com/jquery-timepicker/
@@ -38,7 +38,7 @@
             var numRows = tbody.parent().children('tr').length;
             var divHour = $('<div/>').css({ 'margin': 10, 'text-align': 'center' }).insertAfter(table);
             $('<span>Hora: </span>').css({ 'font-weight': 'bold' }).appendTo(divHour);
-            var hora = $('<input/>').attr({ 'maxlength': 5, 'size': 5 }).appendTo(divHour);
+            var hora = $('<input/>').attr({ 'maxlength': 5, 'size': 5, 'placeholder': ' __:__'}).appendTo(divHour);
             if (inst.currentTime) hora.val(inst.currentTime);
             hora.timepicker({ 'appendTo': inst.dpDiv, 'scrollDefault': 'now', 'timeFormat': 'H:i' }).on('changeTime', function () {
                 inst.currentTime = $(this).val();
@@ -47,7 +47,6 @@
                     $.datepicker._updateAlternate(inst);
                 }
             });
-            hora.mask('00:00', { placeholder: " __:__" });
         }
     };
     $.datepicker._setDateFromFieldOverride = $.datepicker._setDateFromField;
