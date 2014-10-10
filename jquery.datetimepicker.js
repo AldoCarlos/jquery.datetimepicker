@@ -1,6 +1,6 @@
 ﻿/**
  * DateTime Picker plugin that alters JQuery's datepicker to add hour and minutes selection
- * @version: v1.0.1
+ * @version: v1.0.2
  * @author: Aldo Junior Carlos(https://github.com/AldoCarlos/jquery.datetimepicker/)
  *
  * Based on
@@ -66,6 +66,12 @@
         }
         return ret;
     };
+    $.datepicker._hideDatepickerOverload = $.datepicker._hideDatepicker;
+    $.datepicker._hideDatepicker = function (input) {
+        this._hideDatepickerOverload(input);
+        var inst = $.datepicker._curInst;
+        if (inst) inst.currentTime = null;
+    }
     $.datepicker._gotoToday = function (id) {
         var target = $(id);
         var inst = this._getInst(target[0]);
